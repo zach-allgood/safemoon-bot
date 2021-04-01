@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const axios = require('axios');
 const client = new Discord.Client();
+const config = require('./config.json');
 
 const prefix = '~';
 const fs = require('fs');
@@ -35,4 +36,4 @@ client.on('message', message => {
 });
 
 
-client.login('ODI2OTQxNjA2OTUwMDc2NDM4.YGTzYg.LbbY1qdCLMxCf1D7fvRMmNl6Wk8');
+client.login(config.token);
