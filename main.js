@@ -25,14 +25,11 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    switch(command){
-        case 'price':
-            client.commands.get(command).execute(message, args);
-            break;
-        case 'amount':
-            client.commands.get(command).execute(message, args);
-            break;
-        }
+    try {
+        client.commands.get(command).execute(message, args);
+    } catch(e) {
+        console.log(e);
+    }
 });
 
 
